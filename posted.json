@@ -48,5 +48,13 @@
     "at": "2026-11-13T19:44:58.649Z",
     "hash": null,
     "reason": "closing_too_soon"
+  },
+  "46727": {
+    "status": "in_flight",
+    "at": "2026-11-13T19:59:49.363Z",
+    "hash": "e9c2740a7f352ea2016d10784f3f7d9fc6a6b08009734a12ce4e076cc1173933",
+    "revision": 1,
+    "attempts": 1,
+    "forbidden": 0
   }
 }
