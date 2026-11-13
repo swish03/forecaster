@@ -1,0 +1,167 @@
+{
+  "schema": 1,
+  "repository": "forecaster",
+  "note": "Made by agent/tools/make-manifest.mjs. Do not edit by hand.",
+  "files": [
+    {
+      "path": "agent/RUNBOOK.md",
+      "size": 28801,
+      "sha256": "7d28e5e57a051dd13b096b4ca6f492b1df99dae81883b28fc08753f8445363e3"
+    },
+    {
+      "path": "agent/method.json",
+      "size": 1971,
+      "sha256": "5fca5d694c343b41162b5619150db3c1a589b3a15ced90d9717b9f82d78f74ea"
+    },
+    {
+      "path": "agent/method.md",
+      "size": 20865,
+      "sha256": "664be253a443918eda1ecb85a04f03c884a7c0fba56bc9db00d7436fb8bb06a0"
+    },
+    {
+      "path": "agent/prompts/binary.md",
+      "size": 672,
+      "sha256": "4c871f4362949ec6da7ce3303b4c0dda32c3876d21194b5abdc298d1daecb675"
+    },
+    {
+      "path": "agent/prompts/comment-format.md",
+      "size": 2877,
+      "sha256": "bb3f7c8c32428e66c1cf379047df1e51795d3a612c601f3e2d27145f535d7222"
+    },
+    {
+      "path": "agent/prompts/criteria-card.md",
+      "size": 2360,
+      "sha256": "e5046e1492842538c98b339ab9ad851806a6dc34a5eddd4666e50cd7caf97ef7"
+    },
+    {
+      "path": "agent/prompts/multiple-choice.md",
+      "size": 1672,
+      "sha256": "efa275e7e5a1a1dfed8c760c51debea3906c6afe73af31000368aba364b3cd59"
+    },
+    {
+      "path": "agent/prompts/numeric-elicitation.md",
+      "size": 3795,
+      "sha256": "c434592e3be9114dfd4bf077246571841b8ba9349b6a7b9c1505de5261954887"
+    },
+    {
+      "path": "agent/prompts/pass-inside-view.md",
+      "size": 2042,
+      "sha256": "9c5b08f447824a28be2ee06b7d27dd56eee7b87990d8311a042ed385294d61c1"
+    },
+    {
+      "path": "agent/prompts/pass-outside-view.md",
+      "size": 2097,
+      "sha256": "5397f9c204937c5c57d62032dd2c56a472579eaa0a9a74ffb19a8fe4b25b5a22"
+    },
+    {
+      "path": "agent/prompts/research-plan.md",
+      "size": 8641,
+      "sha256": "11a7ef30825b0149c73d18b1fe9a288236af0498e21392acada972ec9c66f25f"
+    },
+    {
+      "path": "agent/prompts/weekly-self-review.md",
+      "size": 4260,
+      "sha256": "8f0075870d70b30cc17b49b289834cb3a5a0fed593e28ea39ac0451f147fcc67"
+    },
+    {
+      "path": "agent/tools/aggregate.mjs",
+      "size": 40311,
+      "sha256": "a01cff364e0fcf16d8feddc306a9c186514698e7e3eec63740c7195d615caa71"
+    },
+    {
+      "path": "agent/tools/check-card.mjs",
+      "size": 2297,
+      "sha256": "0f2a36ad6961cd38d3a7cf81a42009f639b4c9216e813bfc9839f44a596285fd"
+    },
+    {
+      "path": "agent/tools/check-pass.mjs",
+      "size": 1971,
+      "sha256": "c6e0fa871ab7b7f8cd56e5aaa049456182a8f48bb60af3d6f8c15ad373a387f7"
+    },
+    {
+      "path": "agent/tools/check-run.mjs",
+      "size": 4835,
+      "sha256": "2d0bea6494ca2472521c67041d3739d71bc21a16bafc68b1c210202cd6ad1d2d"
+    },
+    {
+      "path": "agent/tools/closed-questions.mjs",
+      "size": 4469,
+      "sha256": "b2bf8ca553bf15c577eb7d18096e4b14efd29b7e2edc05e06eb720c7a7fee16b"
+    },
+    {
+      "path": "agent/tools/core/cli.mjs",
+      "size": 2949,
+      "sha256": "73bb3adece61b2256bb2180600faf379fd950d497b21e483b6d7c7330b5a9485"
+    },
+    {
+      "path": "agent/tools/core/option-table.mjs",
+      "size": 1380,
+      "sha256": "a7c87dab7010a4cea8962a4df53a008bc9f3dbfd4870d75e13a749783c498ef8"
+    },
+    {
+      "path": "agent/tools/core/quantile.mjs",
+      "size": 863,
+      "sha256": "e01969df87dac68dda1f1fa3e79d2c63b1c4bd6e753dd3e2f95e7196a55f2db4"
+    },
+    {
+      "path": "agent/tools/core/question.mjs",
+      "size": 2677,
+      "sha256": "c5f3d823d0e5cdf4a5c29239a98c00a710dd4bd40e439f6e3ed1489850e7a1a9"
+    },
+    {
+      "path": "agent/tools/intake.mjs",
+      "size": 10307,
+      "sha256": "50675c954ac402746c81d1190925e2733e71a86ebeceaedf9374b2cc3c6b2928"
+    },
+    {
+      "path": "agent/tools/make-cdf.mjs",
+      "size": 3135,
+      "sha256": "f38527bdc742f72e292b363beb75cdfe16d336d247a55fd1888894cdc5c0ebaa"
+    },
+    {
+      "path": "agent/tools/make-manifest.mjs",
+      "size": 3916,
+      "sha256": "bbd73aa76ae9dfd998e0cd7e9ad552f327d89bcfd5e491eab618f2391ba56ce5"
+    },
+    {
+      "path": "agent/tools/markets.mjs",
+      "size": 12402,
+      "sha256": "5021622211f2a2c27871e5940111045d870509a745e203bbd4d05b0bb3c0b272"
+    },
+    {
+      "path": "agent/tools/option-market.mjs",
+      "size": 7688,
+      "sha256": "bb102335a454cd4fa9e95cb20dabbc2e057f7058db83eca40bdd41de9f049151"
+    },
+    {
+      "path": "agent/tools/series.mjs",
+      "size": 8445,
+      "sha256": "e30a086f5c7affeabf39381a6fb01222b94271f208abbd7398ad851fc2f3b97d"
+    },
+    {
+      "path": "agent/tools/write-forecast.mjs",
+      "size": 5007,
+      "sha256": "4547277496612a3c3866588008b62a528857bf3758a6d6d13bb5b6b464b2f97e"
+    },
+    {
+      "path": "lib/cdf.mjs",
+      "size": 11843,
+      "sha256": "54569fa8970cfd6e36f243d8a9050c248747e41eda04917b84c8debb79dd695a"
+    },
+    {
+      "path": "lib/http.mjs",
+      "size": 2676,
+      "sha256": "ff1deeebd32fca6daae6878d3949e7bf13a3fc83dfe964b853e8d2edcd2c6312"
+    },
+    {
+      "path": "lib/prob.mjs",
+      "size": 2449,
+      "sha256": "504e1404bafb531d15ac4424678f05eb7bcd024eaed4dedbea67987c1e507741"
+    },
+    {
+      "path": "lib/schema.mjs",
+      "size": 9819,
+      "sha256": "738365786a32a9e499393203f39ee0f73eb8dd8c0a7e1fe5e0af801ee18c03ec"
+    }
+  ]
+}

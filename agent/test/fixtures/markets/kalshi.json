@@ -1,0 +1,43 @@
+{
+  "cursor": "",
+  "events": [
+    {
+      "event_ticker": "FEDDEC26",
+      "series_ticker": "FED",
+      "title": "Fed rate decision December 2026",
+      "markets": [
+        {
+          "ticker": "FEDDEC26-CUT25",
+          "yes_sub_title": "Cut of 25 bp or more",
+          "status": "active",
+          "yes_bid": 58,
+          "yes_ask": 60,
+          "last_price": 59,
+          "volume": 310000,
+          "liquidity": 2500000,
+          "close_time": "2026-12-10T18:55:00Z"
+        },
+        {
+          "ticker": "FEDDEC26-HOLD",
+          "yes_sub_title": "No change",
+          "status": "active",
+          "yes_bid_dollars": "0.3900",
+          "yes_ask_dollars": "0.4100",
+          "volume_fp": "5200.00",
+          "close_time": "2026-12-10T18:55:00Z"
+        },
+        {
+          "ticker": "FEDDEC26-OLD",
+          "status": "settled",
+          "yes_bid": 1,
+          "yes_ask": 2
+        }
+      ]
+    },
+    {
+      "event_ticker": "RAIN",
+      "title": "Rain in a city tomorrow",
+      "markets": [{ "ticker": "RAIN-1", "status": "active", "yes_bid": 40, "yes_ask": 45, "volume": 100 }]
+    }
+  ]
+}

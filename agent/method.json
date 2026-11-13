@@ -1,0 +1,97 @@
+{
+  "version": "1.3",
+  "effective_from": "2026-11-13T00:00:00Z",
+  "passes": 5,
+  "min_valid_passes": 3,
+  "fast_path_passes": 3,
+  "skip_if_minutes_left_under": 30,
+  "full_path_minutes": 25,
+  "fast_path_if_minutes_left_under": 30,
+  "finish_minutes_before_close": 25,
+  "parallel_min_questions": 3,
+  "main_session_minutes_per_question": 11,
+  "criteria_card_max_words": 250,
+  "binary": {
+    "clamp": [
+      0.02,
+      0.98
+    ],
+    "wide_clamp": [
+      0.01,
+      0.99
+    ],
+    "logit_guard": [
+      0.001,
+      0.999
+    ]
+  },
+  "multiple_choice": {
+    "floor": 0.01,
+    "market_sum_tolerance": 0.08
+  },
+  "continuous": {
+    "percentiles": [
+      "1",
+      "2.5",
+      "5",
+      "10",
+      "20",
+      "40",
+      "50",
+      "60",
+      "80",
+      "90",
+      "95",
+      "97.5",
+      "99"
+    ],
+    "min_percentiles": 7,
+    "max_median_range_widths_outside": 3,
+    "min_spread_fraction_of_range": 0.001,
+    "median_gap_flag_axis_share": 0.1,
+    "series_band_flag_ratio": 0.5,
+    "series_band_min_share": 0.85,
+    "series_band_max_factor": 3,
+    "series_band_max_outside_growth": 0.05
+  },
+  "blend": {
+    "market_volume_steps": [
+      {
+        "below_usd": 10000,
+        "weight": 0
+      },
+      {
+        "below_usd": 50000,
+        "weight": 0.15
+      },
+      {
+        "up_to_usd": 250000,
+        "weight": 0.3
+      }
+    ],
+    "deep_market_weight": 0.5,
+    "deep_market_max_spread": 0.04,
+    "community_enabled": false,
+    "community_steps": [
+      {
+        "min_forecasters": 100,
+        "weight": 0.4
+      },
+      {
+        "min_forecasters": 30,
+        "weight": 0.25
+      }
+    ]
+  },
+  "flags": {
+    "signal_gap": 0.25,
+    "pass_spread": 0.4,
+    "high_against_status_quo": 0.9
+  },
+  "model_tiers": {
+    "research": "cheaper",
+    "passes": "task",
+    "main_session": "task",
+    "note": "cheaper = the cheaper model tier the sub-agent tool offers; task = the tier the task itself runs on"
+  }
+}

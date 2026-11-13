@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "note": "Made by poster/make-data-template.mjs from forecaster-data-template. Do not edit by hand.",
+  "files": {
+    "bootstrap.mjs": "73f80b81541d329c0af7f712d68b802bdd52f95d",
+    "CLAUDE.md": "53b041af7b1a475be30fdf2e95da56145c3933ae",
+    ".github/workflows/notify.yml": "deed5f5cf9f4065cc686915dfdc958af206ac744"
+  },
+  "bootstrap_sha256": "94aaede15329f157501be345b753b182e93781765cd0f033456bdf5a8c231eb4"
+}

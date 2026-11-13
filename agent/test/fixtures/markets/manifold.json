@@ -1,0 +1,27 @@
+[
+  {
+    "id": "m1",
+    "question": "Will the Fed cut rates in December 2026?",
+    "url": "https://manifold.markets/example/fed-cut-dec-2026",
+    "outcomeType": "BINARY",
+    "probability": 0.57,
+    "volume": 15432.1,
+    "totalLiquidity": 1000,
+    "closeTime": 1797000000000,
+    "isResolved": false
+  },
+  {
+    "id": "m2",
+    "question": "Fed December 2026 old market",
+    "outcomeType": "BINARY",
+    "probability": 0.9,
+    "isResolved": true
+  },
+  {
+    "id": "m3",
+    "question": "Bitcoin price (USD)",
+    "outcomeType": "PERP",
+    "volume": 395391215.19,
+    "isResolved": false
+  }
+]

@@ -1,0 +1,85 @@
+# The tick: post finished forecasts, then wake the agent for new questions.
+#
+# What starts it (ops/CLOCK.md explains the three clocks):
+#   1. workflow_dispatch from the outside clock (a Google Apps Script time
+#      trigger every 15 minutes) and from forecaster-data's notify.yml, which
+#      starts a tick as soon as the agent pushes a forecast file;
+#   2. the schedule below. It is ONLY an opportunistic backup: GitHub runs the
+#      schedules of young public repositories only every 4 to 7 hours, while
+#      a question stays open about 3 hours. Never rely on it alone.
+# The minutes avoid the top of the hour, when GitHub drops the most scheduled runs.
+name: tick
+
+on:
+  schedule:
+    - cron: "4,24,44 * * * *"
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: "live = the prize tournaments, test = the bot testing area"
+        type: choice
+        options: [live, test]
+        default: live
+      dry_run:
+        description: "Only print what would happen (no posts, no fires, no state writes)"
+        type: boolean
+        default: false
+
+# The workflow token can do exactly three things:
+#   contents: write  the state branch (rulesets keep it off main)
+#   issues: write    open, update and close the one "Forecaster needs attention" issue
+#   actions: write   re-enable this workflow once a week, and read its own runs
+#                    for the daily clock check
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+# At most one tick runs and at most one waits; an older waiting tick is
+# replaced by a newer one. The tick also refuses to post a question whose
+# record changed under it, so an overlap could never double-post.
+concurrency:
+  group: tick
+  cancel-in-progress: false
+
+jobs:
+  tick:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    # The tick stops starting new posts after posting.time_budget_seconds (6 min).
+    timeout-minutes: 9
+    environment: metaculus
+    steps:
+      - name: Check out main
+        # actions/checkout v4, pinned to its commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Set up Node
+        # actions/setup-node v4, pinned to its commit
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "24"
+
+      # The tick refuses to post, wake or write when this run is a re-run
+      # (GITHUB_RUN_ATTEMPT > 1), not on main (GITHUB_REF), or when its commit
+      # (GITHUB_SHA) is no longer main's newest. GitHub sets these itself.
+      # GITHUB_SHA is also the kit commit (kit_ref) sent with each wake-up.
+      - name: Tick
+        env:
+          METACULUS_TOKEN: ${{ secrets.METACULUS_TOKEN }}
+          ROUTINE_FIRE_URL: ${{ secrets.ROUTINE_FIRE_URL }}
+          ROUTINE_FIRE_TOKEN: ${{ secrets.ROUTINE_FIRE_TOKEN }}
+          DATA_REPO_TOKEN: ${{ secrets.DATA_REPO_TOKEN }}
+          DATA_REPO: ${{ vars.DATA_REPO }}
+          GITHUB_TOKEN: ${{ github.token }}
+          TICK_PROFILE: ${{ inputs.profile || 'live' }}
+          TICK_DRY_RUN: ${{ inputs.dry_run && 'yes' || 'no' }}
+        run: |
+          if [ "$TICK_DRY_RUN" = "yes" ]; then
+            node poster/tick.mjs --dry-run
+          else
+            node poster/tick.mjs
+          fi

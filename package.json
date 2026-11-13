@@ -1,0 +1,15 @@
+{
+  "name": "forecaster",
+  "private": true,
+  "description": "Trusted pipeline for an autonomous Metaculus forecasting bot. Node standard library only.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"**/*.test.mjs\"",
+    "tick": "node poster/tick.mjs",
+    "tick:dry": "node poster/tick.mjs --dry-run"
+  }
+}

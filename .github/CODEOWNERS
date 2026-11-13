@@ -1,0 +1,9 @@
+# A label only: it names the owner on the trusted pipeline. It is not a
+# review gate (the main ruleset requires the lint check, and the owner
+# merges by hand). See SECURITY.md.
+# Replace swish03 with the owner's GitHub user name.
+/.github/   @swish03
+/poster/    @swish03
+/lib/       @swish03
+/agent/    @swish03
+/ops/       @swish03

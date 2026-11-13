@@ -1,0 +1,52 @@
+{
+  "events": [
+    {
+      "id": "9001",
+      "title": "Fed decision in December",
+      "slug": "fed-decision-in-december",
+      "endDate": "2026-12-10T19:00:00Z",
+      "markets": [
+        {
+          "id": "501",
+          "question": "Will the Fed cut interest rates in December 2026?",
+          "slug": "fed-cut-december-2026",
+          "outcomes": "[\"Yes\", \"No\"]",
+          "outcomePrices": "[\"0.62\", \"0.38\"]",
+          "volumeNum": 1250000.5,
+          "liquidityNum": 84000,
+          "bestBid": 0.61,
+          "bestAsk": 0.63,
+          "spread": 0.02,
+          "endDate": "2026-12-10T19:00:00Z",
+          "active": true,
+          "closed": false
+        },
+        {
+          "id": "502",
+          "question": "Will the Fed hike interest rates in December 2026?",
+          "outcomes": "[\"Yes\", \"No\"]",
+          "outcomePrices": "[\"0.03\", \"0.97\"]",
+          "volume": "8000",
+          "active": true,
+          "closed": true
+        }
+      ]
+    },
+    {
+      "id": "9002",
+      "title": "Who will chair the committee?",
+      "slug": "committee-chair",
+      "markets": [
+        {
+          "id": "503",
+          "question": "Committee chair after the December 2026 meeting",
+          "outcomes": "[\"Alpha\", \"Beta\", \"Gamma\"]",
+          "outcomePrices": "[\"0.5\", \"0.3\", \"0.2\"]",
+          "volumeNum": 40000,
+          "active": true,
+          "closed": false
+        }
+      ]
+    }
+  ]
+}

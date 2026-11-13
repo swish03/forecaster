@@ -1,0 +1,102 @@
+{
+  "metaculus_base_url": "https://www.metaculus.com/api",
+  "github_api_url": "https://api.github.com",
+  "routine_fire_url_prefix": "https://api.anthropic.com/v1/claude_code/routines/",
+  "routine_api_version": "2026-10-21",
+  "routine_beta": "experimental-cc-routine-2026-04-01",
+  "data_repo_branch": "main",
+  "state_branch": "state",
+  "tick_workflow_file": "tick.yml",
+  "request_spacing_ms": 3500,
+  "timeout_ms": 30000,
+  "profiles": {
+    "live": {
+      "tournaments": [
+        {
+          "slug": "fall-futureeval-2026",
+          "id": 33121
+        },
+        {
+          "slug": "minibench"
+        }
+      ],
+      "dated_rounds": {
+        "slug_prefix": "minibench-",
+        "first_monday": "2026-09-21",
+        "every_days": 14,
+        "count": 2
+      }
+    },
+    "test": {
+      "tournaments": [
+        {
+          "slug": "bot-testing-area",
+          "id": 32977
+        }
+      ],
+      "firing": {
+        "max_questions_per_tick": 1,
+        "daily_fire_budget": 2,
+        "daily_fire_hard_cap": 2,
+        "over_budget_fire_if_minutes_left_under": 0,
+        "batch_hold_minutes": 0
+      }
+    }
+  },
+  "firing": {
+    "max_fires_per_question": 2,
+    "refire_after_minutes": 60,
+    "refire_min_minutes_left": 45,
+    "first_fire_min_minutes_left": 40,
+    "max_fires_per_tick": 3,
+    "max_text_chars": 20000,
+    "max_wait_seconds": 60,
+    "batch_hold_minutes": 30,
+    "batch_hold_if_minutes_left_over": 120,
+    "daily_fire_budget": 12,
+    "over_budget_fire_if_minutes_left_under": 120,
+    "daily_fire_hard_cap": 14,
+    "daily_cap_note": "The launch post of scheduled tasks named a Max plan cap of 15 runs a day (unverified). The hard cap stays just under it."
+  },
+  "posting": {
+    "close_margin_seconds": 60,
+    "max_file_bytes": 200000,
+    "max_post_attempts": 3,
+    "max_forbidden_attempts": 2,
+    "group_hold_until_minutes_left": 45,
+    "time_budget_seconds": 360,
+    "alert_window_hours": 24,
+    "unknown_retry_after_minutes": 10
+  },
+  "limits": {
+    "binary_min": 0.01,
+    "binary_max": 0.99,
+    "mc_min": 0.001,
+    "mc_sum_tolerance": 1e-06,
+    "comment_min_chars": 50,
+    "comment_max_chars": 3000,
+    "max_passes": 10,
+    "max_blend_weight": 0.5,
+    "future_skew_seconds": 300
+  },
+  "alerts": {
+    "issue_title": "Forecaster needs attention",
+    "missed_threshold": 2,
+    "missed_window_hours": 24,
+    "healthy_hours_to_close": 24,
+    "expiry_file": "ops/EXPIRY.md",
+    "expiry_warn_days": 21,
+    "no_live_questions_hours": 72,
+    "data_template_file": "ops/data-template.json"
+  },
+  "clock": {
+    "measure_every_hours": 24,
+    "measure_window_hours": 48,
+    "max_median_gap_minutes": 30,
+    "min_runs": 3
+  },
+  "keepalive": {
+    "enable_every_days": 7
+  },
+  "environment_name": "metaculus"
+}
