@@ -1,0 +1,44 @@
+{
+  "43324": {
+    "status": "skipped_unforecast",
+    "at": "2026-11-13T19:44:58.649Z",
+    "hash": null,
+    "reason": "closing_too_soon"
+  },
+  "43325": {
+    "status": "skipped_unforecast",
+    "at": "2026-11-13T19:44:58.649Z",
+    "hash": null,
+    "reason": "closing_too_soon"
+  },
+  "43329": {
+    "status": "skipped_unforecast",
+    "at": "2026-11-13T19:44:58.649Z",
+    "hash": null,
+    "reason": "closing_too_soon"
+  },
+  "43330": {
+    "status": "skipped_unforecast",
+    "at": "2026-11-13T19:44:58.649Z",
+    "hash": null,
+    "reason": "closing_too_soon"
+  },
+  "45708": {
+    "status": "skipped_unforecast",
+    "at": "2026-11-13T19:44:58.649Z",
+    "hash": null,
+    "reason": "closing_too_soon"
+  },
+  "46450": {
+    "status": "skipped_unforecast",
+    "at": "2026-11-13T19:44:58.649Z",
+    "hash": null,
+    "reason": "closing_too_soon"
+  },
+  "46451": {
+    "status": "skipped_unforecast",
+    "at": "2026-11-13T19:44:58.649Z",
+    "hash": null,
+    "reason": "closing_too_soon"
+  }
+}
