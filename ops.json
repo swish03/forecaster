@@ -3,5 +3,13 @@
     "day": "2026-11-13",
     "count": 1
   },
-  "keepalive_at": "2026-11-13T19:44:58.649Z"
+  "keepalive_at": "2026-11-13T19:44:58.649Z",
+  "clock_check": {
+    "at": "2026-11-13T19:44:58.649Z",
+    "runs": 2,
+    "median_minutes": 12.1,
+    "p90_minutes": 12.1,
+    "max_minutes": 12.1,
+    "verdict": "not_enough_runs"
+  }
 }
