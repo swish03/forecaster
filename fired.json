@@ -7,5 +7,15 @@
     "tournament": "bot-testing-area",
     "kit_ref": "612fa82057fcdd74037717960e4b03bef67f913e",
     "method_version": "1.3"
+  },
+  "46727": {
+    "first_fired_at": "2026-11-13T19:51:14.173Z",
+    "last_fired_at": "2026-11-13T19:51:14.173Z",
+    "count": 1,
+    "closes_at": "2026-11-13T21:00:00.000Z",
+    "tournament": "fall-futureeval-2026",
+    "kit_ref": "612fa82057fcdd74037717960e4b03bef67f913e",
+    "method_version": "1.3",
+    "pending": true
   }
 }
