@@ -6,7 +6,6 @@
     "closes_at": "2026-12-31T23:59:00.000Z",
     "tournament": "bot-testing-area",
     "kit_ref": "612fa82057fcdd74037717960e4b03bef67f913e",
-    "method_version": "1.3",
-    "pending": true
+    "method_version": "1.3"
   }
 }
