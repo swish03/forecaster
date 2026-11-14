@@ -35,6 +35,16 @@
     "kit_ref": "612fa82057fcdd74037717960e4b03bef67f913e",
     "method_version": "1.3"
   },
+  "46730": {
+    "first_fired_at": "2026-11-14T21:35:31.893Z",
+    "last_fired_at": "2026-11-14T21:35:31.893Z",
+    "count": 1,
+    "closes_at": "2026-11-15T00:00:00.000Z",
+    "tournament": "fall-futureeval-2026",
+    "kit_ref": "612fa82057fcdd74037717960e4b03bef67f913e",
+    "method_version": "1.3",
+    "pending": true
+  },
   "46752": {
     "first_fired_at": "2026-11-14T15:35:31.527Z",
     "last_fired_at": "2026-11-14T15:35:31.527Z",
