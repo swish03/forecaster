@@ -16,12 +16,6 @@
     "at": "2026-11-14T19:50:27.250Z",
     "verdict": "protected"
   },
-  "alert": {
-    "issue": 2,
-    "signature": "missed_questions=43324, 43325, 43329, 43330, 45708, 46450, 46451",
-    "opened_at": "2026-11-13T19:44:58.649Z",
-    "last_problem_at": "2026-11-14T19:35:27.681Z"
-  },
   "live_seen_at": "2026-11-15T15:05:25.533Z",
   "fires": {
     "day": "2026-11-15",
