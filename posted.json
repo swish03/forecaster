@@ -50,12 +50,12 @@
     "reason": "closing_too_soon"
   },
   "46719": {
-    "status": "in_flight",
-    "at": "2026-11-15T15:44:39.017Z",
+    "status": "posted",
+    "posted_at": "2026-11-15T15:44:47.076Z",
+    "attempts": 1,
     "hash": "ede1e3f5dff589e98d6aab10684ddc1036be1fdfd09b92aae30bc4897e5fdf6c",
     "revision": 1,
-    "attempts": 1,
-    "forbidden": 0
+    "http": 201
   },
   "46727": {
     "status": "posted",
