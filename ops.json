@@ -20,5 +20,11 @@
   "fires": {
     "day": "2026-11-16",
     "count": 12
+  },
+  "alert": {
+    "issue": 3,
+    "signature": "fire_budget_reached=2026-11-16: 12 of 12",
+    "opened_at": "2026-11-16T11:05:26.806Z",
+    "last_problem_at": "2026-11-16T11:05:26.806Z"
   }
 }
