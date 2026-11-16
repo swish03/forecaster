@@ -231,8 +231,7 @@
     "closes_at": "2026-11-16T10:02:53.000Z",
     "tournament": "minibench",
     "kit_ref": "612fa82057fcdd74037717960e4b03bef67f913e",
-    "method_version": "1.3",
-    "pending": true
+    "method_version": "1.3"
   },
   "46837": {
     "first_fired_at": "2026-11-16T07:35:28.409Z",
@@ -241,8 +240,7 @@
     "closes_at": "2026-11-16T10:22:17.000Z",
     "tournament": "minibench",
     "kit_ref": "612fa82057fcdd74037717960e4b03bef67f913e",
-    "method_version": "1.3",
-    "pending": true
+    "method_version": "1.3"
   },
   "46838": {
     "first_fired_at": "2026-11-16T08:35:38.880Z",
@@ -251,8 +249,7 @@
     "closes_at": "2026-11-16T10:38:19.000Z",
     "tournament": "minibench",
     "kit_ref": "612fa82057fcdd74037717960e4b03bef67f913e",
-    "method_version": "1.3",
-    "pending": true
+    "method_version": "1.3"
   },
   "46839": {
     "first_fired_at": "2026-11-16T08:35:38.880Z",
@@ -261,7 +258,6 @@
     "closes_at": "2026-11-16T11:29:24.000Z",
     "tournament": "minibench",
     "kit_ref": "612fa82057fcdd74037717960e4b03bef67f913e",
-    "method_version": "1.3",
-    "pending": true
+    "method_version": "1.3"
   }
 }
