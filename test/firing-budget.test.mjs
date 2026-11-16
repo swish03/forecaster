@@ -1,9 +1,9 @@
 // The batch hold and the daily wake-up budget (config.firing), with the real
 // config values: hold up to 30 minutes when every new question has more than
-// 120 minutes left; after 12 wake-ups in a UTC day, a first wake-up waits
-// until a question would otherwise have under 120 minutes left, and then
-// every open one goes; after 14 (just under the plan's daily run cap)
-// nothing more is sent that day. The test profile has its own small counter.
+// 120 minutes left; after daily_fire_budget wake-ups in a UTC day, a first
+// wake-up waits until a question would otherwise have under 120 minutes left,
+// and then every open one goes; after daily_fire_hard_cap nothing more is sent
+// that day. The test profile has its own small counter.
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -12,6 +12,8 @@ import { NOW, minutes } from './helpers/fixtures.mjs';
 import { PUBLIC, REAL_CONFIG, world } from './helpers/world.mjs';
 
 const real = () => world({ config: REAL_CONFIG });
+const BUDGET = REAL_CONFIG.firing.daily_fire_budget;
+const CAP = REAL_CONFIG.firing.daily_fire_hard_cap;
 const sentIds = (w, i) => JSON.parse(w.routine.requests[i].body.text).questions.map((q) => q.question_id);
 
 function seedOps(w, ops) {
@@ -22,8 +24,10 @@ test('the config holds the decided firing values', () => {
   const f = REAL_CONFIG.firing;
   assert.equal(f.batch_hold_minutes, 30);
   assert.equal(f.batch_hold_if_minutes_left_over, 120);
-  assert.equal(f.daily_fire_budget, 12);
-  assert.equal(f.daily_fire_hard_cap, 14);
+  assert.equal(f.daily_fire_budget, 40);
+  assert.equal(f.daily_fire_hard_cap, 60);
+  assert.ok(f.daily_fire_hard_cap > f.daily_fire_budget, 'the hard cap leaves room for late wake-ups');
+  assert.ok(f.max_fires_per_tick * 4 <= 30, 'a 15-minute clock stays under the documented 30 API fires per hour per task');
   assert.equal(f.over_budget_fire_if_minutes_left_under, 120);
   assert.ok(f.over_budget_fire_if_minutes_left_under - f.first_fire_min_minutes_left >= 60, 'a late wake-up still leaves the agent an hour');
   assert.equal(f.max_fires_per_question, 2, 'the refire rules are kept');
@@ -81,12 +85,12 @@ test('a second wake-up for a question is never held', async () => {
 
 test('after the daily budget, the agent is woken only when a question gets close, and then for all of them', async () => {
   const w = real();
-  seedOps(w, { fires: { day: '2026-11-16', count: 12 } });
+  seedOps(w, { fires: { day: '2026-11-16', count: BUDGET } });
   w.open('binary', 401, 180);
   const first = await w.run();
   assert.equal(w.routine.requests.length, 0);
   assert.deepEqual(first.summary.held, [401]);
-  assert.ok(w.lines.some((l) => l.includes('daily budget used (12 of 12)')));
+  assert.ok(w.lines.some((l) => l.includes(`daily budget used (${BUDGET} of ${BUDGET})`)));
 
   w.clock = NOW + minutes(180 - 121);
   w.open('binary', 402, 300);
@@ -97,7 +101,7 @@ test('after the daily budget, the agent is woken only when a question gets close
   await w.run();
   assert.equal(w.routine.requests.length, 1);
   assert.deepEqual(sentIds(w, 0), [401, 402], 'every open question goes in that one wake-up');
-  assert.deepEqual(w.state('ops.json').fires, { day: '2026-11-16', count: 13 });
+  assert.deepEqual(w.state('ops.json').fires, { day: '2026-11-16', count: BUDGET + 1 });
 });
 
 test('after the daily budget, a second wake-up is never held', async () => {
@@ -108,7 +112,7 @@ test('after the daily budget, a second wake-up is never held', async () => {
   await w.run();
   assert.equal(w.routine.requests.length, 1);
   // Pretend the day's budget got used up meanwhile.
-  const ops = { ...w.state('ops.json'), fires: { day: '2026-11-16', count: 12 } };
+  const ops = { ...w.state('ops.json'), fires: { day: '2026-11-16', count: BUDGET } };
   w.github.commitFiles(PUBLIC, 'state', { 'ops.json': `${JSON.stringify(ops)}\n` });
   w.clock += minutes(61);
   await w.run();
@@ -118,7 +122,7 @@ test('after the daily budget, a second wake-up is never held', async () => {
 
 test('at the hard cap nothing is sent, and the owner is told', async () => {
   const w = real();
-  seedOps(w, { fires: { day: '2026-11-16', count: 14 } });
+  seedOps(w, { fires: { day: '2026-11-16', count: CAP } });
   w.open('binary', 461, 70);
   const { summary } = await w.run();
   assert.equal(w.routine.requests.length, 0);
@@ -145,7 +149,7 @@ test('the test profile has its own small budget: one question per tick, two wake
 
 test('the budget counts per UTC day and starts again the next day', async () => {
   const w = real();
-  seedOps(w, { fires: { day: '2026-11-15', count: 14 } });
+  seedOps(w, { fires: { day: '2026-11-15', count: CAP } });
   w.open('binary', 501, 100);
   await w.run();
   assert.equal(w.routine.requests.length, 1, 'yesterday\'s count does not hold today');

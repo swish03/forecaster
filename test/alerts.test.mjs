@@ -120,9 +120,10 @@ test('one missed question alone does not open the issue', async () => {
 
 test('the daily fire budget being reached is reported', async () => {
   const w = world();
-  w.github.commitFiles(PUBLIC, 'state', { 'fired.json': '{}', 'posted.json': '{}', 'ops.json': JSON.stringify({ fires: { day: '2026-11-16', count: 12 } }) });
+  const budget = REAL_CONFIG.firing.daily_fire_budget;
+  w.github.commitFiles(PUBLIC, 'state', { 'fired.json': '{}', 'posted.json': '{}', 'ops.json': JSON.stringify({ fires: { day: '2026-11-16', count: budget } }) });
   await w.run();
-  assert.match(w.issues()[0].body, /`fire_budget_reached` \(2026-11-16: 12 of 12\)/);
+  assert.ok(w.issues()[0].body.includes(`\`fire_budget_reached\` (2026-11-16: ${budget} of ${budget})`));
 });
 
 test('a token in ops/EXPIRY.md that expires within 21 days is reported by name and date', async () => {
