@@ -356,5 +356,11 @@
     "hash": "3e2b37f467dad3e1768516b890c6ec29f1985d730bb862a4dbbd3128b0bcd2e8",
     "revision": 1,
     "http": 201
+  },
+  "46849": {
+    "status": "skipped_unforecast",
+    "at": "2026-11-16T17:35:28.452Z",
+    "hash": null,
+    "reason": "closing_too_soon"
   }
 }
