@@ -362,5 +362,23 @@
     "at": "2026-11-16T17:35:28.452Z",
     "hash": null,
     "reason": "closing_too_soon"
+  },
+  "46850": {
+    "status": "skipped_unforecast",
+    "at": "2026-11-16T17:59:12.240Z",
+    "hash": null,
+    "reason": "closing_too_soon"
+  },
+  "46851": {
+    "status": "skipped_unforecast",
+    "at": "2026-11-16T17:59:12.240Z",
+    "hash": null,
+    "reason": "closing_too_soon"
+  },
+  "46852": {
+    "status": "skipped_unforecast",
+    "at": "2026-11-16T17:59:12.240Z",
+    "hash": null,
+    "reason": "closing_too_soon"
   }
 }
