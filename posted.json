@@ -404,5 +404,11 @@
     "at": "2026-11-16T20:52:57.636Z",
     "hash": null,
     "reason": "closing_too_soon"
+  },
+  "46857": {
+    "status": "skipped_unforecast",
+    "at": "2026-11-16T21:05:28.528Z",
+    "hash": null,
+    "reason": "closing_too_soon"
   }
 }
