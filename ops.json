@@ -23,8 +23,8 @@
   },
   "alert": {
     "issue": 3,
-    "signature": "fire_budget_reached=2026-11-16: 14 of 12",
+    "signature": "fire_budget_reached=2026-11-16: 14 of 12;wake_hard_cap=2026-11-16: 14 wake-ups",
     "opened_at": "2026-11-16T11:05:26.806Z",
-    "last_problem_at": "2026-11-16T14:59:30.752Z"
+    "last_problem_at": "2026-11-16T15:05:29.628Z"
   }
 }
