@@ -23,8 +23,8 @@
   },
   "alert": {
     "issue": 3,
-    "signature": "fire_budget_reached=2026-11-17: 13 of 12;missed_questions=46858, 46859",
+    "signature": "fire_budget_reached=2026-11-17: 13 of 12",
     "opened_at": "2026-11-16T11:05:26.806Z",
-    "last_problem_at": "2026-11-17T22:35:27.442Z"
+    "last_problem_at": "2026-11-17T22:50:27.852Z"
   }
 }
