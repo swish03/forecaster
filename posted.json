@@ -135,6 +135,14 @@
     "hash": null,
     "reason": "closing_too_soon"
   },
+  "46754": {
+    "status": "in_flight",
+    "at": "2026-11-17T15:47:13.242Z",
+    "hash": "a9a8c6d5d39c1f553e5c47a59571f31114a78e02d9f873ec598c4a317a70fd98",
+    "revision": 1,
+    "attempts": 1,
+    "forbidden": 0
+  },
   "46767": {
     "status": "skipped_unforecast",
     "at": "2026-11-16T17:20:27.993Z",
