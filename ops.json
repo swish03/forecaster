@@ -18,14 +18,13 @@
   },
   "live_seen_at": "2026-11-18T00:05:30.591Z",
   "fires": {
-    "day": "2026-11-17",
-    "count": 13
+    "day": "2026-11-18",
+    "count": 1
   },
   "alert": {
     "issue": 3,
     "signature": "fire_budget_reached=2026-11-17: 13 of 12",
     "opened_at": "2026-11-16T11:05:26.806Z",
     "last_problem_at": "2026-11-17T23:50:27.701Z"
-  },
-  "hold_since": "2026-11-18T00:05:30.591Z"
+  }
 }
