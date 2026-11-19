@@ -56,18 +56,19 @@ Environment variables (the workflow sets them from the `metaculus` environment):
   `batch_hold_if_minutes_left_over` (120) minutes left, the tick waits up to
   `batch_hold_minutes` (30) so several questions go out in one wake-up.
   Second wake-ups and replacements are never held.
-- **Daily budget:** `daily_fire_budget` (12) wake-ups per UTC day, counted in
+- **Daily budget:** `daily_fire_budget` (40) wake-ups per UTC day, counted in
   `ops.json` (`fires`). Once it is reached, a **first** wake-up waits until a
   question would otherwise have under `over_budget_fire_if_minutes_left_under`
   (120) minutes left, and then every open question goes in that one wake-up.
   Second wake-ups and replacement requests are never held by the budget.
   After the budget, each new question gets one late wake-up only (about two
   hours before its deadline), with no room for a second one.
-- **Hard cap:** `daily_fire_hard_cap` (14): no wake-up at all after that many
-  in a UTC day, because the subscription's own daily run cap (Max: 15, from
-  the launch post, not verified) would refuse it. The alert issue then shows
-  `wake_hard_cap`. If you also run the optional heartbeat task, it uses runs
-  of the same cap.
+- **Hard cap:** `daily_fire_hard_cap` (60): no wake-up at all after that many
+  in a UTC day, as a guard against a runaway loop. Claude's routines page
+  (checked 16 Nov 2026) documents no daily run cap, only 30 API fires per hour
+  per task and 100 per hour per account; every run draws down the
+  subscription's usage meter, which is the real limit. The alert issue then
+  shows `wake_hard_cap`.
 - **Kit per question:** every wake-up names `kit_ref`, the commit whose
   runbook, method and tools the agent must use. A question keeps the kit of
   its first wake-up (`fired.json` → `kit_ref`, `method_version`), so a later

@@ -53,10 +53,10 @@
     "max_wait_seconds": 60,
     "batch_hold_minutes": 30,
     "batch_hold_if_minutes_left_over": 120,
-    "daily_fire_budget": 12,
+    "daily_fire_budget": 40,
     "over_budget_fire_if_minutes_left_under": 120,
-    "daily_fire_hard_cap": 14,
-    "daily_cap_note": "The launch post of scheduled tasks named a Max plan cap of 15 runs a day (unverified). The hard cap stays just under it."
+    "daily_fire_hard_cap": 60,
+    "daily_cap_note": "Checked 16 Nov 2026 at code.claude.com/docs/en/routines: no daily run cap is documented; API fires are limited to 30 per hour per task and 100 per hour per account, and runs draw down subscription usage. These numbers are cost and runaway guards only."
   },
   "posting": {
     "close_margin_seconds": 60,
