@@ -790,5 +790,15 @@
     "tournament": "fall-futureeval-2026",
     "kit_ref": "b544f8d4bd636d38d4f25db03ede677cbe26a767",
     "method_version": "1.3"
+  },
+  "47009": {
+    "first_fired_at": "2026-11-25T21:35:32.921Z",
+    "last_fired_at": "2026-11-25T21:35:32.921Z",
+    "count": 1,
+    "closes_at": "2026-11-26T00:00:00.000Z",
+    "tournament": "fall-futureeval-2026",
+    "kit_ref": "b544f8d4bd636d38d4f25db03ede677cbe26a767",
+    "method_version": "1.3",
+    "pending": true
   }
 }
