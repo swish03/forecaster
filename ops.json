@@ -23,8 +23,8 @@
   },
   "alert": {
     "issue": 5,
-    "signature": "missed_questions=46898, 46899, 47008",
+    "signature": "missed_questions=46899, 47008",
     "opened_at": "2026-11-25T00:05:29.456Z",
-    "last_problem_at": "2026-11-26T08:50:31.748Z"
+    "last_problem_at": "2026-11-26T09:05:29.543Z"
   }
 }
