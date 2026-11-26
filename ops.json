@@ -19,13 +19,12 @@
   "live_seen_at": "2026-11-26T15:05:28.933Z",
   "fires": {
     "day": "2026-11-26",
-    "count": 2
+    "count": 3
   },
   "alert": {
     "issue": 5,
     "signature": "missed_questions=46899, 47008",
     "opened_at": "2026-11-25T00:05:29.456Z",
     "last_problem_at": "2026-11-26T11:50:36.744Z"
-  },
-  "hold_since": "2026-11-26T15:05:28.933Z"
+  }
 }
